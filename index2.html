@@ -1,0 +1,26 @@
+<!--26-4 Most common ways to set Event Handlers-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Post</title>
+  </head>
+  <body>
+    <h1>write something</h1>
+    <input id="input-field" />
+    <button id="update">Submit</button>
+    <h3 id="input-text">Default text</h3>
+    <!-- <script src="scripts/events.js"></script> -->
+    <script>
+      const updateButton = document.getElementById("update");
+      updateButton.addEventListener("click", function () {
+        const inputField = document.getElementById("input-field");
+        const inputText = inputField.value;
+        const text = document.getElementById("input-text");
+        text.innerText = inputText;
+        inputField.value = "";
+      });
+    </script>
+  </body>
+</html>

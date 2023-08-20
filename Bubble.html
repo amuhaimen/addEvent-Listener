@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Explore Events Bubble</title>
+  </head>
+  <body id="body">
+    <h1>Events Bubble</h1>
+    <section id="container">
+      <ul id="list-item">
+        <li>Rahim</li>
+        <li id="karim">Karim</li>
+        <li>Babul</li>
+        <li>dabul</li>
+        <li>sabul</li>
+      </ul>
+    </section>
+    <script>
+      document.getElementById("karim").addEventListener("click", function (e) {
+        console.log("karim clicked");
+        e.stopPropagation();
+      });
+      document.getElementById("karim").addEventListener("click", function (e) {
+        console.log("karim-2 clicked");
+      });
+      document.getElementById("karim").addEventListener("click", function (e) {
+        console.log("karim-3 clicked");
+      });
+      document.getElementById("karim").addEventListener("click", function (e) {
+        console.log("karim-4 clicked");
+      });
+
+      document
+        .getElementById("list-item")
+        .addEventListener("click", function (e) {
+          console.log("list item  clicked");
+        });
+      document
+        .getElementById("container")
+        .addEventListener("click", function (e) {
+          console.log("container clicked");
+        });
+      document.getElementById("body").addEventListener("click", function (e) {
+        console.log("body clicked");
+      });
+    </script>
+  </body>
+</html>

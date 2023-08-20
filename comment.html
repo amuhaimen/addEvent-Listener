@@ -1,0 +1,31 @@
+<!-- 26-5 Create a comment box and display comment -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Comment</title>
+  </head>
+  <body>
+    <h1>Comment here</h1>
+    <textarea id="textArea" cols="50" rows="6"></textarea>
+    <br />
+    <button id="comment-btn">Comment</button>
+    <div id="comment-container"></div>
+
+    <script>
+      const commentButton = document.getElementById("comment-btn");
+
+      commentButton.addEventListener("click", comment);
+      function comment() {
+        const inputBox = document.getElementById("textArea");
+        const newComment = inputBox.value;
+        const commentContainer = document.getElementById("comment-container");
+        const p = document.createElement("p");
+        p.innerText = newComment;
+        commentContainer.appendChild(p);
+        inputBox.value = "";
+      }
+    </script>
+  </body>
+</html>
